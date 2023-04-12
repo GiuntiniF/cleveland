@@ -14651,9 +14651,9 @@ CUSTOM STYLES
 ************/
 @font-face {
   font-family: "Font Awesome 6 Free";
-  src: url("../../workspace/fontawesome-free-6.4.0-web/webfonts/fa-brands-400.ttf");
-  src: url("../../workspace/fontawesome-free-6.4.0-web/webfonts/fa-regular-400.ttf");
-  src: url("../../workspace/fontawesome-free-6.4.0-web/webfonts/fa-solid-900.ttf"); }
+  src: url("../fonts/fa-brands-400.ttf");
+  src: url("../fonts/fa-regular-400.ttf");
+  src: url("../fonts/fa-solid-900.ttf"); }
 
 .dropdown-chevron-icon::before {
   content: "\f078"; }
