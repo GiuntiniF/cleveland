@@ -1,0 +1,32 @@
+.footer-border {
+  border-top: $border-width*3 solid $border-color;
+}
+#footer {
+  @include font-size($font-size-sm);
+  .collapse-wrapper {
+    padding-bottom: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, 2);
+    @include media-breakpoint-down(md) {
+      border-bottom: $border-width solid $border-color;
+    }
+  }
+  h4 {
+    @include font-size($font-size-base);
+  }
+  @include media-breakpoint-up(md) {
+    .collapse-toggler {
+      pointer-events: none;
+    }
+    .collapse {
+      display: block!important;
+      height: auto!important;
+    }
+  }
+}
+
+.list-collapse {
+  @extend .list-unstyled;
+  li {
+    margin-bottom: map-get($spacers, 2);
+  }
+}

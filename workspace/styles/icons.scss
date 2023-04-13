@@ -1,0 +1,18 @@
+.dropdown-chevron-icon {
+  @include fa-icon-solid($fa-var-chevron-down);
+}
+.show {
+  .dropdown-chevron-icon {
+    @include fa-icon-solid($fa-var-chevron-up);
+  }
+}
+
+.collapse-icon {
+  @include fa-icon-solid($fa-var-caret-down);
+}
+
+.collapsed {
+  .collapse-icon {
+    @include fa-icon-solid($fa-var-caret-right);
+  }
+}

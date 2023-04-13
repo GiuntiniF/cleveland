@@ -1,0 +1,22 @@
+{
+  "name": "cleveland",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "../node_modules/.bin/node-sass workspace/app.scss -o dist/css/app.css",
+    "watch": "../node_modules/.bin/node-sass --watch scss/app.scss -o dist/css/app.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "grunt": "^1.6.1",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^8.0.0",
+    "sass": "^1.60.0"
+  }
+}

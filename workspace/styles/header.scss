@@ -1,0 +1,172 @@
+$header-icon-font-size: $font-size-lg*1.6;
+
+#header-navbar {
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+  padding-top: 0;
+  padding-bottom: 0;
+  .navbar-item {
+    @include media-breakpoint-up(md) {
+      position: relative;
+    }
+    padding-top: $navbar-padding-y;
+    padding-bottom: $navbar-padding-y;
+  }
+  .login-menu, .list-menu, .popover-list-menu {
+    @include font-size($font-size-lg*0.9);
+  }
+  .login-menu, .list-menu, #weather-menu-id {
+    width: 100vw;
+    margin-top: 0;
+    border-width: 0;
+    box-shadow: $custom-shadow;
+    top: 100%;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $dropdown-bg;
+    }
+  }
+  .login-menu {
+    &:before {
+      right: $container-padding-x;
+      transform: translateX(-50%);
+    }
+    padding-top: 0;
+    padding-bottom: 0;
+    @include media-breakpoint-up(md) {
+      width: auto;
+      min-width: 25vw;
+    }
+  }
+  .list-menu, .popover-list-menu {
+    @include media-breakpoint-up(md) {
+      width: auto;
+      min-width: 15vw;
+    }
+    .list-group-item.list-group-item-action {
+      .list-toggler-icon {
+        position: absolute;
+        right: $list-group-item-padding-x;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:hover {
+        font-weight: $font-weight-semibold;
+        text-decoration: underline;
+      }
+    }
+  }
+  .list-menu, #weather-menu-id {
+    &:before {
+      left: $container-padding-x;
+      transform: translateX(-50%);
+    }
+  }
+  .list-menu {
+    .list-group-item.list-group-item-action {
+      &:hover  {
+        &:not(.list-submenu-toggler) {
+          background-color: $list-group-bg;
+        }
+      }
+      &.list-submenu-toggler {
+        &.popover-shown, &:hover {
+          .list-toggler-icon {
+            display: none;
+          }
+        }
+        &.popover-shown {
+          background-color: $list-group-hover-bg;
+          text-decoration: underline;
+          font-weight: $font-weight-semibold;
+        }
+      }
+    }
+    .list-group-item:first-of-type {
+        border-top-width: 0;
+    }
+    .popover {
+      transform: unset!important;
+      top: 0!important;
+      min-height: 100%;
+      min-width: 15vw;
+      left:100%!important;
+      border-bottom-width: 0;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-radius: 0;
+      .popover-body {
+        @extend .p-0;
+      }
+    }
+  }
+  .popover-list-menu {
+    background-color: $list-group-hover-bg;
+    box-shadow: none!important;
+    .list-group-item.list-group-item-action {
+      background-color: $list-group-hover-bg;
+      cursor: pointer;
+      &:hover {
+        background-color: $list-group-hover-bg!important;
+      }
+    }
+  }
+  $my-padding: $dropdown-font-size + $btn-padding-x*2;
+  #weather-menu-id {
+    padding: map-get($spacers, 3) calc(#{map-get($spacers, 3) + $my-padding}) map-get($spacers, 3) map-get($spacers, 3);
+    #weather-menu-close {
+      @extend .btn;
+      position: absolute;
+      top: map-get($spacers, 1);
+      right: map-get($spacers, 1);
+    }
+    .weather-menu-form {
+      margin-right: $my-padding * -1;
+    }
+    @include media-breakpoint-up(md) {
+      width: auto;
+      white-space: nowrap;
+      &:before {
+          left: calc($container-padding-x + $header-icon-font-size + $btn-padding-x*2 + $btn-border-width*2);
+      }
+    }
+  }
+}
+
+.btn-header {
+  @extend .btn;
+  @extend .btn-dark;
+  &.show {
+    .login-arrow {
+      @extend .fa-chevron-up;
+    }
+  }
+}
+.header-icon-lg {
+  @include font-size($header-icon-font-size);
+}
+
+
+.input-icon-wrapper {
+  position: relative;
+  overflow: visible;
+  .form-control {
+    padding-left: map-get($spacers, 4);
+  }
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: $input-padding-x;
+    transform: translateY(-50%);
+    font-size: $input-font-size;
+    color: $gray-500;
+  }
+}

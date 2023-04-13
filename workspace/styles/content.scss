@@ -1,0 +1,20 @@
+.adv-img-box {
+  display: none;
+  margin-bottom: map-get($spacers, 4);
+  @include media-breakpoint-up(md) {
+      display: block;
+  }
+  &.adv-sticky-box {
+    position:sticky;
+    top: 15%;
+  }
+}
+
+.post-item {
+  padding-top: map-get($spacers, 3);
+  padding-bottom: map-get($spacers, 3);
+  border-bottom: $border-width*3 solid $border-color;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
