@@ -1,0 +1,10 @@
+.btn-cookies {
+  background-color: $gray-200;
+  border-color: $gray-900;
+  color: $gray-900;
+  &:hover {
+    background-color: $white;
+    border-color: $gray-900;
+    color: $link-hover-color-blue;
+  }
+}

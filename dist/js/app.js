@@ -7161,7 +7161,17 @@ function initSidebarPopover() {
                     myPopover._config.isShown = false;
                 }
             });
-        })
+        });
+        popoverTriggerEl.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            bootstrap.Popover.getInstance(this).toggle();
+        });
+        popoverTriggerEl.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+        document.getElementById('list-menu-toggler-id').addEventListener('hidden.bs.dropdown', function () {
+            bootstrap.Popover.getInstance(popoverTriggerEl).hide();
+        });
         return myPopover;
     })
 }
