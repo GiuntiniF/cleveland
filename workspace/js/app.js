@@ -1,37 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     initSidebarPopover();
-
-    let toggler_mobile = document.getElementById('weather-mobile-toggler-id');
-    let weather_toggler = document.getElementById('weather-toggler-id');
-    let weather_menu_close = document.getElementById('weather-menu-close');
-    toggler_mobile.addEventListener('click', function() {
-        bootstrap.Dropdown.getOrCreateInstance(weather_toggler).show();
-    });
-    weather_menu_close.addEventListener('click', function() {
-        bootstrap.Dropdown.getOrCreateInstance(weather_toggler).hide();
-    });
-    let isDropdownShown = false;
-    weather_toggler.addEventListener('shown.bs.dropdown', function () {
-        document.addEventListener('click', hideDropdown);
-        isDropdownShown = true;
-    });
-    weather_toggler.addEventListener('hidden.bs.dropdown', function () {
-        isDropdownShown = false;
-        document.removeEventListener('click', hideDropdown);
-    });
-
-    function hideDropdown(e) {
-        if(
-            e.target.id!=="weather-menu-id" &&
-            e.target.id!=="weather-mobile-toggler-id" &&
-            e.target.id!=="weather-toggler-id" &&
-            e.target.id!=="weather-location-id" &&
-            e.target.id!=="weather-submit-id" &&
-            isDropdownShown===true
-        ) {
-            bootstrap.Dropdown.getOrCreateInstance(weather_toggler).hide();
-        }
-    }
+    initWeatherMenu();
 })
 
 function initSidebarPopover() {
@@ -99,4 +68,38 @@ function initSidebarPopover() {
         });
         return myPopover;
     })
+}
+
+function initWeatherMenu() {
+    let toggler_mobile = document.getElementById('weather-mobile-toggler-id');
+    let weather_toggler = document.getElementById('weather-toggler-id');
+    let weather_menu_close = document.getElementById('weather-menu-close');
+    toggler_mobile.addEventListener('click', function() {
+        bootstrap.Dropdown.getOrCreateInstance(weather_toggler).show();
+    });
+    weather_menu_close.addEventListener('click', function() {
+        bootstrap.Dropdown.getOrCreateInstance(weather_toggler).hide();
+    });
+    let isDropdownShown = false;
+    weather_toggler.addEventListener('shown.bs.dropdown', function () {
+        document.addEventListener('click', hideDropdown);
+        isDropdownShown = true;
+    });
+    weather_toggler.addEventListener('hidden.bs.dropdown', function () {
+        isDropdownShown = false;
+        document.removeEventListener('click', hideDropdown);
+    });
+}
+
+function hideDropdown(e) {
+    if(
+        e.target.id!=="weather-menu-id" &&
+        e.target.id!=="weather-mobile-toggler-id" &&
+        e.target.id!=="weather-toggler-id" &&
+        e.target.id!=="weather-location-id" &&
+        e.target.id!=="weather-submit-id" &&
+        isDropdownShown===true
+    ) {
+        bootstrap.Dropdown.getOrCreateInstance(weather_toggler).hide();
+    }
 }

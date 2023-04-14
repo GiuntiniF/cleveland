@@ -14667,6 +14667,9 @@ CUSTOM STYLES
 .collapsed .collapse-icon::before {
   content: "\f0da"; }
 
+img[loading="lazy"] {
+  background-color: #dee2e6; }
+
 .btn-cookies {
   background-color: #e9ecef;
   border-color: #212529;
