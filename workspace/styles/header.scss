@@ -54,6 +54,9 @@ $header-icon-font-size: $font-size-lg*1.6;
       width: auto;
       min-width: 33vw;
     }
+    @include media-breakpoint-up(xl) {
+      min-width: 15vw;
+    }
     .list-group-item.list-group-item-action {
       .list-toggler-icon {
         position: absolute;

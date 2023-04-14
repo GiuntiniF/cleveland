@@ -14725,6 +14725,9 @@ img[loading="lazy"] {
     #header-navbar .list-menu, #header-navbar .popover-list-menu {
       width: auto;
       min-width: 33vw; } }
+  @media (min-width: 1200px) {
+    #header-navbar .list-menu, #header-navbar .popover-list-menu {
+      min-width: 15vw; } }
   #header-navbar .list-menu .list-group-item.list-group-item-action .list-toggler-icon, #header-navbar .popover-list-menu .list-group-item.list-group-item-action .list-toggler-icon {
     position: absolute;
     right: 1.5rem;
