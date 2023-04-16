@@ -72,7 +72,7 @@ function initSidebarPopover() {
 
 function initWeatherMenu() {
     let toggler_mobile = document.getElementById('weather-mobile-toggler-id');
-    let weather_toggler = document.getElementById('weather-toggler-id');
+    window.weather_toggler = document.getElementById('weather-toggler-id');
     let weather_menu_close = document.getElementById('weather-menu-close');
     toggler_mobile.addEventListener('click', function() {
         bootstrap.Dropdown.getOrCreateInstance(weather_toggler).show();
@@ -80,7 +80,7 @@ function initWeatherMenu() {
     weather_menu_close.addEventListener('click', function() {
         bootstrap.Dropdown.getOrCreateInstance(weather_toggler).hide();
     });
-    let isDropdownShown = false;
+    window.isDropdownShown = false;
     weather_toggler.addEventListener('shown.bs.dropdown', function () {
         document.addEventListener('click', hideDropdown);
         isDropdownShown = true;
